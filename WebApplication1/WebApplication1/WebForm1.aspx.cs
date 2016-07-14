@@ -10,15 +10,17 @@ namespace requiredtasks
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        string path;
         protected void Page_Load(object sender, EventArgs e)
         {
             Timer1.Tick += Timer1_Tick;
+            path = Server.MapPath("~/");
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             report rprt = new report();
-            using (StreamWriter w = File.AppendText(@"C:\Users\shaima\Source\Repos\rep1\WebApplication1\log.txt"))
+            using (StreamWriter w = File.AppendText(path + @"\log.txt"))
             {
                 rprt.Writetxt("Hi", w);
                 //Server.MapPath("~/tmp/")
