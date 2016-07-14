@@ -21,7 +21,7 @@ namespace requiredtasks
             using (StreamWriter w = File.AppendText(@"C:\Users\shaima\Source\Repos\rep1\WebApplication1\log.txt"))
             {
                 rprt.Writetxt("Hi", w);
-
+                //Server.MapPath("~/tmp/")
             }
         }
     }
